@@ -1,0 +1,22 @@
+<form>
+  <div class="form-group">
+    <label for="inputText">Enter data</label>
+    <input
+          type="text"
+          class="form-control"
+          id="inputText"
+          (input) = "inputHandler($event)"
+          >
+    <small id="emailHelp" class="form-text text-muted">Only JSON, please!</small>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlFile1">If you have JSON file. Choose file, please!</label>
+    <input
+          type="file"
+          class="form-control-file"
+          id="exampleFormControlFile1">
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="disabled">Submit</button>
+</form>
