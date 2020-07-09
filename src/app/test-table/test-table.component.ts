@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { Car } from '../models';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import { ArrOfObj } from '../models';
 
 
 @Component({
@@ -9,7 +9,9 @@ import { Car } from '../models';
 })
 export class TestTableComponent implements OnInit, OnChanges {
 
-  @Input() data: Car[];
+  @Input() data: ArrOfObj[];
+
+  @Output() onResultAdd = new EventEmitter<Array<any>>();
 
   keyz = [];
 
@@ -21,7 +23,12 @@ export class TestTableComponent implements OnInit, OnChanges {
 
     this.keyz = Object.keys(newVal)
 
-    console.log(this.keyz)
+    // console.log(this.keyz)
+  }
+
+  upload(){
+    console.log("Имеем в таблице и отправляем в app", this.data)
+    this.onResultAdd.emit(this.data)
   }
 
 

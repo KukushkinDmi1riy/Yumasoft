@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ArrOfObj } from './models';
 
 @Component({
   selector: 'app-root',
@@ -8,41 +9,26 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'convertor-app';
 
-  cars = [
-    {
-      name: 'Ford',
-      age:25,
-      b: 4,
-      sx: 'm'
-    },
-    {
-      name: 'Mazda',
-      age:5,
-      b: 8
+  rawData = [
 
-    },
-    {
-      name: 'Mercedes',
-      age:56,
-      b: 12,
-      sx: 'm',
-      xl:'xl'
-    }
   ];
 
-  addTextToList(someText: string) {
-    this.cars = [
-      ...this.cars,
-      {
-        name: someText,
-        age:235,
-        b: 1,
-        sx: 'm',
-      }
-    ];
+  finalData = ""
 
+  addTextToList(someText: Array<ArrOfObj>) {
+    this.rawData = [
+      ...this.rawData,
+      ...someText
+    ];
+    console.log("rawData", this.rawData);
 
   }
 
-  
+  addResultToFinal(data: Array<ArrOfObj> ) {
+
+    this.finalData = JSON.stringify(data)
+    console.log("то что пойдёт в area", typeof(this.finalData))
+  }
+
+
 }

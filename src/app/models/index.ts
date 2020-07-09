@@ -1,1 +1,1 @@
-export { Car } from './car.model';
+export { ArrOfObj } from './arrOfObj.model';

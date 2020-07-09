@@ -8,7 +8,8 @@
               placeholder="Required example textarea"
               name="someText"
               required
-              [(ngModel)]="someText"></textarea>
+              [(ngModel)]="someText2"
+              ></textarea>
     <div
         class="invalid-feedback text"
         [style.display]="!f.form.valid?'block':'none'"
@@ -26,8 +27,12 @@
           >
   </div>
 
-  <button [disabled]="!f.form.valid"
+  <!-- <button [disabled]="!f.form.valid"
           type="submit"
+          class="btn btn-primary"
+
+          (click) = "convert()">Continue</button> -->
+  <button type="submit"
           class="btn btn-primary"
 
           (click) = "convert()">Continue</button>

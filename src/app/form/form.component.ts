@@ -1,7 +1,6 @@
 import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 
-
-
+// import {ArrOfObj} from '../models';
 
 @Component({
   selector: 'app-form',
@@ -10,23 +9,40 @@ import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 })
 export class FormComponent {
 
-  @Output() onTextAdd = new EventEmitter<String>();
+  @Output() onTextAdd = new EventEmitter<Array<any>>();
 
-  someText = '';
+  // someText: Array<any> = [
+  //   {
+  //     name: 'Ford',
+  //     age: 25,
+  //     sex: 'm'
+  //   },
+  //   {
+  //     name: 'Mazda',
+  //     age: 5
+  //   },
+  //   {
+  //     name: 'Mercedes',
+  //     age: 56
+  //   }
+  // ];
+  someText2: any = '';
+
+  someText: Array<any> = [];
+
   disabled = true;
 
   convert() {
-    console.log(`------------`);
-    console.log(this.someText);
-
-      //convert to Obj from JSON
-    // const parseJ = JSON.parse(this.someText);
-    // console.log(`-------**-----`);
-    // console.log(parseJ);
 
 
-    this.onTextAdd.emit(this.someText);
-    this.someText = '';
+    const parseObj = JSON.parse(this.someText2)
+
+    const newOb = [...this.someText,...parseObj];
+
+    console.log("Пришёл JSON", newOb);
+
+    this.onTextAdd.emit(newOb);
+    this.someText2 = '';
   }
 
 }

@@ -8,13 +8,16 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of data; let idx = index">
-        <td *ngFor = "let key of keyz"> <input type="text" value={{item[key]}}> </td>
+        <td *ngFor = "let key of keyz">
+          <input type="text" value={{item[key]}} [(ngModel)]="item[key]">
+        </td>
       </tr>
     </tbody>
   </table>
   <button type="submit"
           class="btn btn-primary"
-          disabled>
+          (click) = "upload()"
+          >
           Unload
   </button>
 </div>
