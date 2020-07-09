@@ -1,23 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit{
+export class FormComponent {
 
+  @Output() onTextAdd = new EventEmitter<String>();
+
+  someText = '';
   disabled = true;
 
-  ngOnInit() {
+  convert() {
+    console.log(`------------`);
+    console.log(this.someText);
 
-  }
+      //convert to Obj from JSON
+    // const parseJ = JSON.parse(this.someText);
+    // console.log(`-------**-----`);
+    // console.log(parseJ);
 
-  inputHandler(e: any){
-    console.log(e.target.value)
-    if(e.target.value) {
-      this.disabled = false;
-    }
+
+    this.onTextAdd.emit(this.someText);
+    this.someText = '';
   }
 
 }

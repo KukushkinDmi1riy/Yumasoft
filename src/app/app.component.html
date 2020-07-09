@@ -1,5 +1,8 @@
 <div class="container ">
   <h1>JSON converter </h1>
-  <app-form></app-form>
-  <app-table></app-table>
+  <app-form (onTextAdd)="addTextToList($event)"></app-form>
+  <!-- <app-table [data]="cars"></app-table> -->
+  <!-- <app-test-table [keyz]="keyToHead" [valuez]="valueToBody"></app-test-table> -->
+  <app-test-table [data]="cars"></app-test-table>
+  <app-result></app-result>
 </div>
