@@ -10,6 +10,7 @@ import { ArrOfObj } from '../models';
 export class TestTableComponent implements OnInit, OnChanges {
 
   @Input() data: ArrOfObj[];
+  @Input() disabled: Boolean;
 
   @Output() onResultAdd = new EventEmitter<Array<any>>();
 
@@ -23,12 +24,20 @@ export class TestTableComponent implements OnInit, OnChanges {
 
     this.keyz = Object.keys(newVal)
 
-    // console.log(this.keyz)
+    console.log(this.keyz)
   }
+
+
+
 
   upload(){
     console.log("Имеем в таблице и отправляем в app", this.data)
     this.onResultAdd.emit(this.data)
+  }
+
+
+  clearTable() {
+    this.data = null;
   }
 
 

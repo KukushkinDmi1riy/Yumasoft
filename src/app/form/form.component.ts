@@ -32,10 +32,12 @@ export class FormComponent {
 
   disabled = true;
 
+  
+
   convert() {
 
 
-    const parseObj = JSON.parse(this.someText2)
+    const parseObj = JSON.parse(this.someText2.replace(/(['"])?([a-zA-Z0-9_]+)(['"])?:/g, '"$2": '))
 
     const newOb = [...this.someText,...parseObj];
 

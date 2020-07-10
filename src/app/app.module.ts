@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { TestTableComponent } from './test-table/test-table.component';
 import { ResultComponent } from './result/result.component';
+import { JsonToCSVComponent } from './json-to-csv/json-to-csv.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ResultComponent } from './result/result.component';
     AppComponent,
     FormComponent,
     TestTableComponent,
-    ResultComponent
+    ResultComponent,
+    JsonToCSVComponent
   ],
   imports: [
     BrowserModule,

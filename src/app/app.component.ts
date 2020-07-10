@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ArrOfObj } from './models';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,13 +16,15 @@ export class AppComponent {
 
   finalData = ""
 
+  disabled=false;
+
   addTextToList(someText: Array<ArrOfObj>) {
     this.rawData = [
       ...this.rawData,
       ...someText
     ];
     console.log("rawData", this.rawData);
-
+    this.disabled=true;
   }
 
   addResultToFinal(data: Array<ArrOfObj> ) {
