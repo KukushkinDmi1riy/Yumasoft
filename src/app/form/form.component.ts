@@ -11,28 +11,13 @@ export class FormComponent {
 
   @Output() onTextAdd = new EventEmitter<Array<any>>();
 
-  // someText: Array<any> = [
-  //   {
-  //     name: 'Ford',
-  //     age: 25,
-  //     sex: 'm'
-  //   },
-  //   {
-  //     name: 'Mazda',
-  //     age: 5
-  //   },
-  //   {
-  //     name: 'Mercedes',
-  //     age: 56
-  //   }
-  // ];
-  someText2: any = '';
+  someText2: any = ''; // входные данные из textarea
 
-  someText: Array<any> = [];
+  someText: Array<any> = []; //привел в вид validJSONN
 
   disabled = true;
 
-  
+
 
   convert() {
 

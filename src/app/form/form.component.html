@@ -5,7 +5,7 @@
     <textarea
               class="form-control valid"
               id="validationTextarea"
-              placeholder="Required example textarea"
+              placeholder='e.x. [{ "name": "John", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }] or [{ name: "John", age: 35, isAdmin: false, friends: [0,1,2,3] }]'
               name="someText"
               required
               [(ngModel)]="someText2"
@@ -18,18 +18,19 @@
     </div>
   </div>
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="exampleFormControlFile1">If you have JSON file. Choose file, please!</label>
     <input
           type="file"
           class="form-control-file choose-file"
           id="exampleFormControlFile1"
           >
-  </div>
+  </div> -->
 
   <button [disabled]="!f.form.valid"
           type="submit"
           class="btn btn-primary"
 
-          (click) = "convert()">Continue</button>
+          (click) = "convert()">Continue
+        </button>
 </form>

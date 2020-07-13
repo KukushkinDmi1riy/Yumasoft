@@ -3,5 +3,5 @@
   <app-form (onTextAdd)="addTextToList($event)" ></app-form>
   <app-test-table  [disabled] = "disabled" [data]="rawData" (onResultAdd) = "addResultToFinal($event)"></app-test-table>
   <app-result *ngIf="finalData" [finalD]="finalData"></app-result>
-  <app-json-to-csv></app-json-to-csv>
+  <app-json-to-csv *ngIf="finalData" [finalD]="finalData"></app-json-to-csv>
 </div>

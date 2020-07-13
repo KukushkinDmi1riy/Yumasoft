@@ -28,8 +28,6 @@ export class TestTableComponent implements OnInit, OnChanges {
   }
 
 
-
-
   upload(){
     console.log("Имеем в таблице и отправляем в app", this.data)
     this.onResultAdd.emit(this.data)
